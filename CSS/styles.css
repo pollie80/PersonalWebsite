@@ -11,14 +11,25 @@ header {
 
 body {
     text-align: center;
+    background: url(../img/boption2.jpg) repeat 0 0;
     background-color: cornflowerblue;
+    /* background-image: url(/img/boption1.jpg); */
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /* -webkit-mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(137, 174, 243,0.5)), to(rgba(137, 174, 243,0.5))); */
+    background-blend-mode: luminosity;
 }
 
 footer {
     background-color: rgb(137, 174, 243);
-    padding: 3px;
+    padding: 30px;
     position: absolute;
     bottom: 0;
+    height: 200px;
+    width: 1150px;
+    left: 20%;
 }
 
 h1 {
@@ -36,6 +47,10 @@ p, a {
 a {
     color: black;
     text-decoration: unset;
+}
+
+.ref {
+    border-bottom: 1px solid black;
 }
 
 #main {
@@ -66,7 +81,7 @@ a {
     left: 150px;
     top: 190px;
     background-color: rgb(137, 174, 243);
-    border-radius: 10px;
+    border-radius: 3px;
     padding: 5px;
 }
 
@@ -77,6 +92,10 @@ a {
 
 #navcontent .navoption:hover {
     background-color: rgb(60, 92, 151);
+}
+
+.navoption {
+    padding: 5px;
 }
 
 #navbutton {
@@ -100,10 +119,10 @@ a:hover {
     color: white;
 }
 
-body {
-    /* based off https://stackoverflow.com/questions/14378200/how-to-make-custom-cursor-on-website */
-    /* cursor: url(/img/cursor.png), auto; */
-}
+/* body {
+     based off https://stackoverflow.com/questions/14378200/how-to-make-custom-cursor-on-website 
+     cursor: url(/img/cursor.png), auto; 
+} */
 
 ::selection {
     background-color: white;
