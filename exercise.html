@@ -5,7 +5,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="CSS/styles.css" >
         <title>Tian's Gym Schedule | Tian Welgemoed</title>
-        <header>Welcome to my website!</header>
+        <header>Fitness!</header>
     </head>
     <body>
         <div id="nav">
@@ -21,7 +21,17 @@
         </div>
 
         <div id="main">
+            <p>
+                The API is <a href="https://my-gym-api.herokuapp.com/days">HERE</a> if you'd like to check it out!
+            </p>
             <table>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Muscle Group</th>
+                        <th>Exercises</th>
+                    </tr>
+                </thead>
                 <tbody id="data">
         
                 </tbody>
@@ -43,7 +53,9 @@
                                         tablecontent += "<tr>";
                                         tablecontent += "<td>"+d.day+"</td>";
                                         tablecontent += "<td>"+d.bodycategory+"</td>";
-                                        tablecontent += "<td>"+d.exercises+"</td>";
+                                        tablecontent += "<td> | ";
+                                        d.exercises.forEach((e)=>{tablecontent += e+" | ";});
+                                        tablecontent += "</td></tr>";
                                     });
         
                                     //display i guess

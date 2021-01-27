@@ -33,6 +33,14 @@ footer {
     margin-top: 20px;
 }
 
+table {
+    border-style: double;
+}
+
+td {
+    border-style: solid;
+}
+
 h1 {
     font-family: 'Pacifico', cursive; 
     font-size: 30px;
