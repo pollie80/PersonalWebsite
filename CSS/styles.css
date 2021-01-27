@@ -24,12 +24,13 @@ body {
 
 footer {
     background-color: rgb(137, 174, 243);
-    padding: 30px;
-    position: absolute;
+    padding: 20px;
+    /* position: absolute; */
     bottom: 0;
-    height: 200px;
-    width: 1150px;
-    left: 20%;
+    height: 10%;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 20px;
 }
 
 h1 {
