@@ -84,11 +84,17 @@ a {
     display: inline;
 }
 
+#nav:hover #navbutton{
+    width: 40px;
+    height: 40px;
+    transform: rotate(90deg);
+}
+
 #nav:hover #navcontent {
     display: inline;
     position: fixed;
     left: 150px;
-    top: 190px;
+    top: 192.5px;
     background-color: rgb(137, 174, 243);
     border-radius: 3px;
     padding: 5px;
@@ -112,7 +118,7 @@ a {
     position: fixed;
     left: 150px;
     top: 150px;
-    border-radius: 20px;
+    border-radius: 10px;
     width: auto;
     height: auto;
     padding: 2px;
