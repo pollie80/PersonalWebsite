@@ -38,7 +38,8 @@
             </table>
 
             <script>
-                //js code - based on https://www.youtube.com/watch?v=WMQ2sq1dw6Y
+                document.getElementById("data").innerHTML = "Loading...(allow up to 5 seconds please)";
+                //jquery code - based on https://www.youtube.com/watch?v=WMQ2sq1dw6Y
                 fetch("https://my-gym-api.herokuapp.com/days").then(
                     res=>{
                         res.json().then(
