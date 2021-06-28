@@ -134,6 +134,10 @@ a:hover {
     color: white;
 }
 
+a {
+    font-weight: bold;
+}
+
 /* body {
      based off https://stackoverflow.com/questions/14378200/how-to-make-custom-cursor-on-website 
      cursor: url(/img/cursor.png), auto; 
