@@ -1,59 +1,281 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="CSS/styles.css" >
-        <title>Home | Tian Welgemoed</title>
-        <header>Welcome to my website!</header>
-    </head>
-    <body>
-        <div id="nav">
-            <div id="navbutton">
-                <img src="img/navbut.png" id="navpic">
-            </div>
-            <div id="navcontent">
-                <p class="navoption"><a class="navlink" href="index.html">Home</a></p>
-                <p class="navoption"><a class="navlink" href="https://github.com/pollie80/">My GitHub</a></p>
-                <p class="navoption"><a class="navlink" href="https://www.linkedin.com/in/tian-welgemoed">My LinkedIn</a></p>
-                <p class="navoption"><a class="navlink" href="personalprojects.html">My Personal Projects</a></p>
-                <p class="navoption"><a class="navlink" href="contactme.html">Contact me!</a></p>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tian Welgemoed | Software Engineer</title>
+    <meta name="description" content="Tian Welgemoed: a goal-driven software engineer in Aotearoa New Zealand who's properly onto it.">
+    <meta property="og:title" content="Tian Welgemoed | Software Engineer">
+    <meta property="og:description" content="Goal-driven software engineer. Onto it, easy to work with, and good for a laugh.">
+    <meta property="og:image" content="assets/img/forest.jpg">
+    <meta name="color-scheme" content="dark light">
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+    <!-- Set the theme before first paint so there's no flash of the wrong one -->
+    <script>
+        (function () {
+            var t = null;
+            try { t = localStorage.getItem('theme'); } catch (e) {}
+            if (t !== 'light' && t !== 'dark') {
+                t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            }
+            document.documentElement.setAttribute('data-theme', t);
+            document.documentElement.classList.add('js');
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <a class="skip" href="#main" data-i18n="ui.skip">Skip to content</a>
+
+    <header class="site-header" id="top">
+        <div class="bar">
+            <a class="logo" href="#top" aria-label="Tian Welgemoed">TW<span>.</span></a>
+
+            <nav class="nav" id="nav" aria-label="Primary">
+                <a href="#about" data-i18n="nav.about">About</a>
+                <a href="#work" data-i18n="nav.work">Experience</a>
+                <a href="#skills" data-i18n="nav.skills">Skills</a>
+                <a href="#projects" data-i18n="nav.projects">Projects</a>
+                <a href="#contact" data-i18n="nav.contact">Contact</a>
+            </nav>
+
+            <div class="controls">
+                <div class="lang" role="group" data-i18n-attr="aria-label:ui.language" aria-label="Language">
+                    <button type="button" data-lang="en" title="English" aria-pressed="true">EN</button>
+                    <button type="button" data-lang="mi" title="Te Reo Māori" aria-pressed="false">MI</button>
+                    <button type="button" data-lang="af" title="Afrikaans" aria-pressed="false">AF</button>
+                </div>
+                <button type="button" class="icon-btn theme-toggle" id="themeToggle" data-i18n-attr="aria-label:ui.theme" aria-label="Toggle dark mode">
+                    <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+                    <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+                </button>
+                <button type="button" class="icon-btn menu-toggle" id="menuToggle" aria-controls="nav" aria-expanded="false" data-i18n-attr="aria-label:ui.menu" aria-label="Menu">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+                </button>
             </div>
         </div>
+    </header>
 
-        <div id="main">
-            <h1>Intro:</h1>
-            <p>Hello there, internet surfer. My name is Tian Welgemoed and this is a basic [slightly outdated] website that tells you a bit about me.<br><br></p>
-            <p>I have been enjoying programming since I was about 14. Initially, scratch caught my attention, so I went on <a href="https://www.codecademy.com/" class="ref">Codecademy</a> to 
-                some real-world languages like JavaScript and Python a go. I graduated high school at <a href="https://www.onslow.school.nz/learning-teaching/learning-areas-1/technology" class="ref">Onslow College</a> where the Digital Technologies department 
-                is really good for a high school. We were taught Python, how to make a website using HTML, CSS, PHP and SQL. Upon that, we did a couple of short 
-                courses to learn some really <i>basic</i> &nbspJQuery, Graphics development and extra SQL. At <a href="https://www.wgtn.ac.nz/" class="ref">Victoria University of Wellington</a>, I gradutated
-				with a Bachelor of Engineering with First Class Honours, majoring in <a href="https://www.wgtn.ac.nz/explore/degrees/engineering/overview" class="ref">Software Engineering</a> and a Specialisation in Artificial Intelligence.
-            </p>
-            <p>
-                Besides programming, I like to stay active and socialise. My friends and I like to go on trips to random places to have fun and relax. I used to play cricket, hockey, tennis, golf and softball, so I am always keen for a friendly (or competitive) 
-                game of any kind. I built a gaming PC and mostly play a competitive FPS called Valorant. 
-            </p>
-            <p>
-                Currently, I am a Junior Software Engineer at Trade Me. I mostly code in C#, Python, and have started to use Terraform. Otherwise, I'm being exposed to all kinds
-				of technologies like GCloud, AWS, Docker, and more. 
-            </p>
-            <p>
-                If you'd like to contact me or request my CV, click the "Get in touch!" link at the bottom of the page!
-            </p>
-            <p>
-                Check out my personal projects <a href="personalprojects.html">HERE</a>!
-            </p>
-            <p>
-                PS: I took the photo in the background and styled it with CSS 😎.
-            </p>
+    <main id="main">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-bg" aria-hidden="true"></div>
+            <div class="wrap hero-inner">
+                <p class="kicker"><span class="dot"></span> <span data-i18n="hero.status">Software engineer · Aotearoa NZ</span></p>
+                <h1 class="hero-title" data-i18n-html="hero.title">Kia ora, I'm <span class="name">Tian</span>.</h1>
+                <p class="hero-role" data-i18n="hero.role">Software engineer who's properly onto it.</p>
+                <p class="hero-lede" data-i18n="hero.lede">I build fast, reliable search systems at Trade Me, keep the pager quiet, and make stand-up a bit funnier. Goal-driven, easy to work with, and always keen to learn the next thing.</p>
+                <div class="cta">
+                    <a class="btn btn-primary" href="#projects" data-i18n="hero.cta1">See what I've built</a>
+                    <a class="btn btn-ghost" href="#contact" data-i18n="hero.cta2">Say kia ora</a>
+                </div>
+            </div>
+            <p class="photo-credit" data-i18n="hero.photo">Photo: mine. Forest: not mine.</p>
+        </section>
+
+        <!-- About -->
+        <section class="section" id="about">
+            <div class="wrap">
+                <p class="kicker reveal" data-i18n="about.kicker">About</p>
+                <h2 class="reveal" data-i18n="about.title">The short version</h2>
+
+                <div class="about-grid">
+                    <div class="about-copy reveal">
+                        <p data-i18n="about.p1">I'm a software engineer in Aotearoa New Zealand with a first-class honours degree and a soft spot for clean, efficient code. I've been hooked on programming since I was 14. Back then it was Scratch; now it's search platforms in the cloud.</p>
+                        <p data-i18n="about.p2">People tend to describe me as “onto it”. I like setting a goal, owning it end to end and getting it over the line, ideally with a few laughs along the way. I can explain tech without the jargon, and I'm usually the one who remembers why that decision was made.</p>
+                    </div>
+
+                    <dl class="stats reveal">
+                        <div><dt>1<sup>st</sup></dt><dd data-i18n="stat.honours">Class Honours in Software Engineering</dd></div>
+                        <div><dt>2×</dt><dd data-i18n="stat.dean">Dean's List, Faculty of Engineering</dd></div>
+                        <div><dt>2</dt><dd data-i18n="stat.certs">Google Cloud certifications</dd></div>
+                        <div><dt>14</dt><dd data-i18n="stat.age">The age I wrote my first code</dd></div>
+                    </dl>
+                </div>
+
+                <ul class="traits">
+                    <li class="card reveal">
+                        <span class="trait-icon" aria-hidden="true">⚡</span>
+                        <h3 data-i18n="trait.1.t">Onto it</h3>
+                        <p data-i18n="trait.1.d">Owns the problem, closes the loop, never needs chasing.</p>
+                    </li>
+                    <li class="card reveal">
+                        <span class="trait-icon" aria-hidden="true">🎯</span>
+                        <h3 data-i18n="trait.2.t">Goal-driven</h3>
+                        <p data-i18n="trait.2.d">Sets the bar, then clears it. Certifications, on-call, ownership: ticked.</p>
+                    </li>
+                    <li class="card reveal">
+                        <span class="trait-icon" aria-hidden="true">😄</span>
+                        <h3 data-i18n="trait.3.t">Good banter</h3>
+                        <p data-i18n="trait.3.d">Serious about the work, never too serious about myself. Stand-ups are better with a joke.</p>
+                    </li>
+                    <li class="card reveal">
+                        <span class="trait-icon" aria-hidden="true">🤝</span>
+                        <h3 data-i18n="trait.4.t">Team player</h3>
+                        <p data-i18n="trait.4.d">From 3-person start-ups to big tech teams: clear comms, shared goals.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="section" id="work">
+            <div class="wrap">
+                <p class="kicker reveal" data-i18n="work.kicker">Experience</p>
+                <h2 class="reveal" data-i18n="work.title">Where I've been onto it</h2>
+
+                <ol class="timeline">
+                    <li class="reveal">
+                        <span class="when">2022 · <span data-i18n="work.now">now</span></span>
+                        <h3><span data-i18n="work.1.role">Software Engineer</span> <span class="at">@ Trade Me</span></h3>
+                        <p data-i18n="work.1.d">Search Platform team. I own cross-team components, sit on the on-call roster, and ship C#/.NET services on GCP and AWS with Terraform. Started as an intern, now an intermediate.</p>
+                        <ul class="tags"><li>C# / .NET</li><li>GCP</li><li>AWS</li><li>Terraform</li><li>OpenSearch</li><li>New Relic</li><li>Splunk</li></ul>
+                    </li>
+                    <li class="reveal">
+                        <span class="when">2021 · 2022</span>
+                        <h3><span data-i18n="work.2.role">Software Engineer (part-time)</span> <span class="at">@ Trade Legion</span></h3>
+                        <p data-i18n="work.2.d">Built a React web app and mobile app while the team grew from 3 to 12. Not much hand-holding early on, which taught me to figure things out fast.</p>
+                        <ul class="tags"><li>React</li><li>TypeScript</li><li>Firebase</li></ul>
+                    </li>
+                    <li class="reveal">
+                        <span class="when">2021 · 2022</span>
+                        <h3><span data-i18n="work.3.role">Software Engineer Intern</span> <span class="at">@ ANZ</span></h3>
+                        <p data-i18n="work.3.d">Rotated through five teams in Payments Tech as a developer, a DevOps engineer and a test automation engineer.</p>
+                        <ul class="tags"><li>Java</li><li>DevOps</li><li>Test automation</li><li>Dynatrace</li></ul>
+                    </li>
+                    <li class="reveal">
+                        <span class="when">2017 · 2021</span>
+                        <h3 data-i18n="work.4.role">Before the code</h3>
+                        <p data-i18n="work.4.d">Helped design a student portal at university, and spent three years delivering pizzas and sorting out orders, the best customer-service bootcamp there is.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="section" id="skills">
+            <div class="wrap">
+                <p class="kicker reveal" data-i18n="skills.kicker">Skills</p>
+                <h2 class="reveal" data-i18n="skills.title">The toolbox</h2>
+
+                <div class="skill-grid">
+                    <div class="card reveal">
+                        <h3 data-i18n="skills.lang">Languages</h3>
+                        <ul class="tags"><li>C#</li><li>Python</li><li>TypeScript</li><li>JavaScript</li><li>Java</li><li>SQL</li><li>HTML / CSS</li></ul>
+                    </div>
+                    <div class="card reveal">
+                        <h3 data-i18n="skills.cloud">Cloud &amp; infrastructure</h3>
+                        <ul class="tags"><li>Google Cloud</li><li>AWS</li><li>Terraform</li><li>Docker</li><li>CI/CD</li></ul>
+                    </div>
+                    <div class="card reveal">
+                        <h3 data-i18n="skills.obs">Observability</h3>
+                        <ul class="tags"><li>New Relic</li><li>Splunk</li><li>Dynatrace</li></ul>
+                    </div>
+                    <div class="card reveal">
+                        <h3 data-i18n="skills.data">Data &amp; frameworks</h3>
+                        <ul class="tags"><li>.NET</li><li>React</li><li>PostgreSQL</li><li>OpenSearch</li><li>Firebase</li></ul>
+                    </div>
+                </div>
+
+                <h3 class="subhead reveal" data-i18n="skills.creds">Credentials</h3>
+                <ul class="creds">
+                    <li class="reveal"><span class="badge">2025</span> <span>Google Cloud Certified: Generative AI Leader</span></li>
+                    <li class="reveal"><span class="badge">2023</span> <span>Google Cloud Certified: Cloud Digital Leader</span></li>
+                    <li class="reveal"><span class="badge">2022</span> <span data-i18n="cred.degree">BE (Hons), Software Engineering, First Class, with an AI specialisation (Victoria University of Wellington)</span></li>
+                    <li class="reveal"><span class="badge">2020–21</span> <span data-i18n="cred.dean">Dean's List, Faculty of Engineering, two years running</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="section" id="projects">
+            <div class="wrap">
+                <p class="kicker reveal" data-i18n="projects.kicker">Projects</p>
+                <h2 class="reveal" data-i18n="projects.title">Things I've built for fun</h2>
+
+                <div class="project-grid">
+                    <article class="card project featured reveal">
+                        <p class="project-meta">C# · Swift · Python</p>
+                        <h3>Helpful Apps</h3>
+                        <p data-i18n="p.helpful">Small desktop utilities that each fix one specific annoyance: an in-call status badge, a controller battery tray, a usage meter for the menu bar. No servers, no accounts, no subscriptions.</p>
+                        <div class="links"><a href="https://github.com/pollie80/helpful-apps" data-i18n="ui.code">Code</a></div>
+                    </article>
+                    <article class="card project reveal">
+                        <p class="project-meta">Python · Web</p>
+                        <h3>Wordle Solver</h3>
+                        <p data-i18n="p.wordle">Cracks Wordle without peeking at the answer. Started life as a Python script, now lives on the web.</p>
+                        <div class="links"><a href="https://pythonwordlesolver.web.app" data-i18n="ui.live">Live</a><a href="https://github.com/pollie80/Wordle-Solver" data-i18n="ui.code">Code</a></div>
+                    </article>
+                    <article class="card project reveal">
+                        <p class="project-meta">JavaScript</p>
+                        <h3>The Worst Game Ever</h3>
+                        <p data-i18n="p.worst">Exactly what it says on the tin. Games so bad they circle back around to genius. Allegedly.</p>
+                        <div class="links"><a href="https://pollie80.github.io/WorstGameEver/" data-i18n="ui.live">Live</a><a href="https://github.com/pollie80/WorstGameEver" data-i18n="ui.code">Code</a></div>
+                    </article>
+                    <article class="card project reveal">
+                        <p class="project-meta">React · GitHub API</p>
+                        <h3>GitHub Portfolio</h3>
+                        <p data-i18n="p.portfolio">Every public repo I've made, pulled live from the GitHub API.</p>
+                        <div class="links"><a href="https://my-portfolio-g20poe1if-pollie80.vercel.app/" data-i18n="ui.live">Live</a></div>
+                    </article>
+                    <article class="card project reveal">
+                        <p class="project-meta">Python · Discord</p>
+                        <h3>Question of the Day Bot</h3>
+                        <p data-i18n="p.discord">Posts a question of the day to my mates' Discord server, automatically, every single day. Heated debates guaranteed.</p>
+                        <div class="links"><a href="https://github.com/Tian-Personal/discord-bot" data-i18n="ui.code">Code</a></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Off the clock -->
+        <section class="section" id="life">
+            <div class="wrap">
+                <p class="kicker reveal" data-i18n="life.kicker">Off the clock</p>
+                <h2 class="reveal" data-i18n="life.title">When I'm not shipping</h2>
+
+                <ul class="life-grid">
+                    <li class="card reveal"><span class="trait-icon" aria-hidden="true">🏏</span><h3 data-i18n="life.1.t">Cricket</h3><p data-i18n="life.1.d">Rep cricket as a junior and a national club final. Still convinced every ball I bowl is a wicket-taker.</p></li>
+                    <li class="card reveal"><span class="trait-icon" aria-hidden="true">🎮</span><h3 data-i18n="life.2.t">Games &amp; quizzes</h3><p data-i18n="life.2.d">Built my own gaming PC. Valorant rank: classified. At quiz night: dangerous.</p></li>
+                    <li class="card reveal"><span class="trait-icon" aria-hidden="true">🏓</span><h3 data-i18n="life.3.t">Table tennis</h3><p data-i18n="life.3.d">Friendly game? Sure. It won't stay friendly for long.</p></li>
+                    <li class="card reveal"><span class="trait-icon" aria-hidden="true">📷</span><h3 data-i18n="life.4.t">Photography</h3><p data-i18n="life.4.d">Both photos on this site are mine. National Geographic hasn't called yet.</p></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="section" id="contact">
+            <div class="wrap">
+                <div class="contact-card reveal">
+                    <p class="kicker" data-i18n="contact.kicker">Contact</p>
+                    <h2 data-i18n="contact.title">Let's build something good</h2>
+                    <p data-i18n="contact.p">Hiring, collaborating, or just want to settle tabs vs spaces once and for all? My inbox is open.</p>
+                    <div class="cta">
+                        <a class="btn btn-primary" href="mailto:tian.welgemoed@gmail.com" data-i18n="contact.email">Email me</a>
+                        <button type="button" class="btn btn-ghost" id="copyEmail" data-email="tian.welgemoed@gmail.com" data-i18n="contact.copy">Copy address</button>
+                    </div>
+                    <ul class="socials">
+                        <li><a href="https://www.linkedin.com/in/tian-welgemoed">LinkedIn ↗</a></li>
+                        <li><a href="https://github.com/pollie80">GitHub ↗</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <p data-i18n="footer">Designed and hand-coded by Tian Welgemoed. No frameworks were harmed.</p>
+            <a href="#top" data-i18n="ui.top">Back to top ↑</a>
         </div>
+    </footer>
 
-        <footer>
-            <p class="navoption"><a class="navlink" href="index.html">Home</a></p>
-            <p class="navoption"><a class="navlink" href="https://github.com/pollie80/">My GitHub</a></p>
-            <p class="navoption"><a class="navlink" href="https://www.linkedin.com/in/tian-welgemoed">My LinkedIn</a></p>
-            <p class="navoption"><a class="navlink" href="contactme.html">Contact me!</a></p>
-        </footer>
-    </body>
+    <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
 </html>
