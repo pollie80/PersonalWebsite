@@ -19,6 +19,7 @@ window.I18N = {
 
         'hero.status': 'Kaipūkaha pūmanawa · Aotearoa',
         'hero.title': 'Kia ora, ko <span class="name">Tian</span> ahau.',
+        'hero.say': 'Whakahuatia',
         'hero.role': 'He kaipūkaha pūmanawa, he tino kakama hoki.',
         'hero.lede': 'Ka hanga ahau i ngā pūnaha rapu tere, pono hoki ki Trade Me. He ngākau whai whāinga tōku, he māmā te mahi tahi ki a au, ā, e hiahia tonu ana ahau ki te ako i ngā mea hou.',
         'hero.cta1': 'Tirohia aku mahi',
@@ -112,6 +113,7 @@ window.I18N = {
 
         'hero.status': 'Sagteware-ingenieur · Nieu-Seeland',
         'hero.title': 'Hallo, ek is <span class="name">Tian</span>.',
+        'hero.say': 'Uitgespreek',
         'hero.role': 'Sagteware-ingenieur wat altyd op die bal is.',
         'hero.lede': 'Ek bou vinnige, betroubare soekstelsels by Trade Me, hou die pager stil en maak die oggendvergadering ’n bietjie snaakser. Doelgerig, maklik om mee saam te werk, en altyd lus om die volgende ding te leer.',
         'hero.cta1': 'Sien wat ek gebou het',
