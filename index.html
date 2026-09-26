@@ -9,16 +9,16 @@
     <meta property="og:description" content="Goal-driven software engineer. Onto it, easy to work with, and good for a laugh.">
     <meta property="og:image" content="assets/img/forest.jpg">
     <meta name="color-scheme" content="dark light">
+    <meta name="theme-color" content="#0a0d0c">
     <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 
     <!-- Set the theme before first paint so there's no flash of the wrong one -->
     <script>
         (function () {
+            // Dark by default; light only if the visitor has chosen it
             var t = null;
             try { t = localStorage.getItem('theme'); } catch (e) {}
-            if (t !== 'light' && t !== 'dark') {
-                t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-            }
+            if (t !== 'light') t = 'dark';
             document.documentElement.setAttribute('data-theme', t);
             document.documentElement.classList.add('js');
         })();
@@ -244,9 +244,57 @@
                     <li class="card reveal"><span class="trait-icon" aria-hidden="true">🏏</span><h3 data-i18n="life.1.t">Cricket</h3><p data-i18n="life.1.d">Rep cricket as a junior and a national club final. Still convinced every ball I bowl is a wicket-taker.</p></li>
                     <li class="card reveal"><span class="trait-icon" aria-hidden="true">🎮</span><h3 data-i18n="life.2.t">Games &amp; quizzes</h3><p data-i18n="life.2.d">Built my own gaming PC. Valorant rank: classified. At quiz night: dangerous.</p></li>
                     <li class="card reveal"><span class="trait-icon" aria-hidden="true">🏓</span><h3 data-i18n="life.3.t">Table tennis</h3><p data-i18n="life.3.d">Friendly game? Sure. It won't stay friendly for long.</p></li>
-                    <li class="card reveal"><span class="trait-icon" aria-hidden="true">📷</span><h3 data-i18n="life.4.t">Photography</h3><p data-i18n="life.4.d">Both photos on this site are mine. National Geographic hasn't called yet.</p></li>
+                    <li class="card reveal"><span class="trait-icon" aria-hidden="true">📷</span><h3 data-i18n="life.4.t">Photography</h3><p data-i18n="life.4.d">Every photo on this site is mine. National Geographic hasn't called yet.</p></li>
                 </ul>
             </div>
+        </section>
+
+        <!-- Camera roll -->
+        <section class="section" id="photos">
+            <div class="wrap">
+                <p class="kicker reveal" data-i18n="photos.kicker">Camera roll</p>
+                <h2 class="reveal" data-i18n="photos.title">Places I've wandered</h2>
+                <p class="section-lede reveal" data-i18n="photos.lede">All shot on my phone. Hover for full colour, or tap to open.</p>
+
+                <div class="gallery">
+                    <button type="button" class="shot wide reveal" data-full="assets/img/concert.jpg">
+                        <img src="assets/img/concert.jpg" alt="Stadium concert stage lit by red lasers and a huge swirling blue screen" loading="lazy">
+                        <span class="cap" data-i18n="photos.concert">Live music, loud lasers</span>
+                    </button>
+                    <button type="button" class="shot reveal" data-full="assets/img/sunset.jpg">
+                        <img src="assets/img/sunset.jpg" alt="Orange sun setting over a rocky bay from a sandy beach" loading="lazy">
+                        <span class="cap" data-i18n="photos.sunset">Sunset back home</span>
+                    </button>
+                    <button type="button" class="shot reveal" data-full="assets/img/plitvice.jpg">
+                        <img src="assets/img/plitvice.jpg" alt="Waterfalls pouring into turquoise lakes surrounded by forest" loading="lazy">
+                        <span class="cap" data-i18n="photos.plitvice">Plitvice Lakes, Croatia</span>
+                    </button>
+                    <button type="button" class="shot reveal" data-full="assets/img/split.jpg">
+                        <img src="assets/img/split.jpg" alt="Terracotta rooftops of a harbour city under mountains and blue sky" loading="lazy">
+                        <span class="cap" data-i18n="photos.split">Split, Croatia</span>
+                    </button>
+                    <button type="button" class="shot reveal" data-full="assets/img/hvar.jpg">
+                        <img src="assets/img/hvar.jpg" alt="Stone waterfront with a bell tower and a small boat in clear blue water" loading="lazy">
+                        <span class="cap" data-i18n="photos.hvar">Hvar, Croatia</span>
+                    </button>
+                    <button type="button" class="shot reveal" data-full="assets/img/naxos.jpg">
+                        <img src="assets/img/naxos.jpg" alt="Ancient marble doorway silhouetted against a pastel sunset sky" loading="lazy">
+                        <span class="cap" data-i18n="photos.naxos">Portara, Naxos, Greece</span>
+                    </button>
+                    <button type="button" class="shot reveal" data-full="assets/img/milos.jpg">
+                        <img src="assets/img/milos.jpg" alt="White volcanic rock arches over deep turquoise sea" loading="lazy">
+                        <span class="cap" data-i18n="photos.milos">Sarakiniko, Milos, Greece</span>
+                    </button>
+                </div>
+            </div>
+
+            <dialog class="lightbox" id="lightbox">
+                <form method="dialog"><button class="icon-btn lb-close" data-i18n-attr="aria-label:ui.close" aria-label="Close">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+                </button></form>
+                <img alt="">
+                <p class="lb-cap"></p>
+            </dialog>
         </section>
 
         <!-- Contact -->

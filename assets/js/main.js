@@ -15,11 +15,6 @@
         store('theme', next);
     });
 
-    // Follow the OS setting live, unless the visitor has picked one themselves
-    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function (e) {
-        if (!recall('theme')) root.setAttribute('data-theme', e.matches ? 'light' : 'dark');
-    });
-
     /* ---------- Language ---------- */
     var dict = window.I18N || {};
     var textEls = document.querySelectorAll('[data-i18n]');
@@ -129,6 +124,26 @@
         document.querySelectorAll('main section[id]').forEach(function (s) { spy.observe(s); });
     } else {
         document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+    }
+
+    /* ---------- Photo lightbox ---------- */
+    var lightbox = document.getElementById('lightbox');
+    if (lightbox && typeof lightbox.showModal === 'function') {
+        var lbImg = lightbox.querySelector('img');
+        var lbCap = lightbox.querySelector('.lb-cap');
+        document.querySelectorAll('.shot').forEach(function (shot) {
+            shot.addEventListener('click', function () {
+                var img = shot.querySelector('img');
+                lbImg.src = shot.dataset.full;
+                lbImg.alt = img.alt;
+                lbCap.textContent = shot.querySelector('.cap').textContent;
+                lightbox.showModal();
+            });
+        });
+        // Clicking the backdrop (or the photo) closes it too
+        lightbox.addEventListener('click', function (e) {
+            if (e.target === lightbox || e.target === lbImg) lightbox.close();
+        });
     }
 
     /* ---------- Copy email ---------- */
